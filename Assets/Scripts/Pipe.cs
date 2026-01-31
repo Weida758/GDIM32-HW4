@@ -6,6 +6,7 @@ public class Pipe : MonoBehaviour
 {
     private Collider2D goodGameCollider;
     [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float lifeTime = 15f;
 
     private void Awake()
     {
@@ -28,5 +29,10 @@ public class Pipe : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

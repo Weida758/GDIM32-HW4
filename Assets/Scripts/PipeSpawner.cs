@@ -36,7 +36,7 @@ public class PipeSpawner : MonoBehaviour
 
     private void SpawnPipe()
     {
-        yPosition = Random.Range(bottomY + bottomY/3, topY - topY/3);
+        yPosition = Random.Range(-2.5f, 2);
         Instantiate(pipePrefab,  new Vector3(transform.position.x, yPosition, transform.position.z), Quaternion.identity);
     }
 }
